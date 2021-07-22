@@ -5,7 +5,7 @@ class File:
         self.path=path
         self.page=page
         
-    def extract(self):
+    def _extract(self):
         """Obtiene el texto de una pagina especificada
 
         Args:
@@ -18,3 +18,9 @@ class File:
         page_one_object=pdf.getPage(self.page)
         page_one_text=page_one_object.extractText()
         return page_one_text
+    
+    def write_file(self):
+        text=self._extract()
+        with open("file/texto.txt","w",encoding="utf-8") as file:
+            for line in text:
+                file.write(line)
