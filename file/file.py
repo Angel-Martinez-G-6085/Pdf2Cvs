@@ -21,6 +21,6 @@ class File:
     
     def write_file(self):
         text=self._extract()
-        with open("file/texto.txt","w",encoding="utf-8") as file:
+        with open("data/texto.txt","w",encoding="utf-8") as file:
             for line in text:
                 file.write(line)
